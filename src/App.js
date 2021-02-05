@@ -43,13 +43,16 @@ class App extends React.Component {
           <div style={{ boxShadow: "0 1px 2px 0 rgb(34 36 38 / 15%)" }}>
             <Nav />
           </div>
-          <div className="container2">
-            <Route path="/" exact component={MainContent} />
-            <Route path="/terms" exact component={Terms} />
-            <Route path="/policy" exact component={Policy} />
-            <Route path="/privacy" exact component={Privacy} />
-            <Route path="/shop/:handle" exact component={Shop} />
+          <div style={{ backgroundColor: "#f8f8f8" }}>
+            <div className="container2">
+              <Route path="/" exact component={MainContent} />
+              <Route path="/terms" exact component={Terms} />
+              <Route path="/policy" exact component={Policy} />
+              <Route path="/privacy" exact component={Privacy} />
+              <Route path="/shop/:handle" exact component={Shop} />
+            </div>
           </div>
+
           <div>
             <Footer />
           </div>
