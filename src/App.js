@@ -11,6 +11,7 @@ import "semantic-ui-css/semantic.min.css";
 
 import MainContent from "./components/Content/MainContent";
 import Shop from "./components/Content/pages/shop";
+import ProductDetail from "./components/Content/pages/productDetail";
 import Terms from "./components/Content/pages/Terms";
 import Policy from "./components/Content/pages/Policy";
 import Privacy from "./components/Content/pages/Privacy";
@@ -50,6 +51,7 @@ class App extends React.Component {
               <Route path="/policy" exact component={Policy} />
               <Route path="/privacy" exact component={Privacy} />
               <Route path="/shop/:handle" exact component={Shop} />
+              <Route path="/product-details" exact component={ProductDetail} />
             </div>
           </div>
 

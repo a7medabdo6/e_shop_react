@@ -37,13 +37,16 @@ code {
   width: 1px;
   background: rgba(34,36,38,.1);
 }
+.d-in-block{
+  display: inline-block !important;
+}
 
 @media only screen and (max-width: 500px) {
   .d-sm-block_force {
     display: inline-block!important;
   }
   .d-none-custom{
-    display: none;
+    display: none !important;
 
   }
   }
@@ -68,9 +71,7 @@ code {
 .right{
   float: right;
 }
-.d-in-block{
-  display: inline-block !important;
-}
+
  .count-cart {
   position: absolute;
   top: -8px;
@@ -262,4 +263,56 @@ ul li{
 .cartListProducts{
   overflow: scroll;
   height: 480px; 
+}
+.carousel.carousel-slider{
+  width: 70% !important;
+  display: inline-block;
+}
+.carousel:nth-child(2){
+  width: 20% !important;
+  display: inline-block;
+  position: absolute !important;
+  top: 10%;
+  margin-left: 8%;
+}
+.carousel .thumbs{
+  padding: 0px;
+}
+.carousel .thumbs-wrapper {
+  margin: 20px 0px 20px 40px !important;
+  overflow: hidden;
+}
+.carousel .thumbs li{
+  display:block;
+  margin-top: 10px;
+}
+.thumbs{
+  transform: translate3d(0px, 0px, 0px) !important;
+  transition-duration: 350ms;
+}
+.fa-star {
+  font-size: 16px;
+  color: #f5c523;
+}
+.add-cart-btn {
+  color: #fff;
+  background-color: grey;
+}
+ .add-cart-btn {
+  width: 300px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #000;
+  line-height: 49px;
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 0;
+  display: inline-block;
+}
+.tax-text{
+  display: block;
+    color: gray;
+    font-size: 15px;
 }
