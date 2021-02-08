@@ -18,8 +18,8 @@ export default function TopFooter() {
             </h6>
           </div>
         </Col>
-        <Col className="col-12 col-md-6 col-lg-3">
-          <div>
+        <Col className="col-12  col-md-6 col-lg-3">
+          <div className="ml-4">
             <div className="d-flex">
               <div className="rounded-circle icon d-flex align-items-center justify-content-center mr-3">
                 <i className="fa fa-exclamation-circle font-size-1/5"></i>

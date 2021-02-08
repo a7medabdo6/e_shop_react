@@ -19,6 +19,7 @@ code {
 .container2{
   width: 90%;
   margin: auto;
+  overflow-y: auto;
 }
 .ui.menu{
   border: none !important;
@@ -41,7 +42,7 @@ code {
   display: inline-block !important;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .d-sm-block_force {
     display: inline-block!important;
   }
@@ -280,7 +281,7 @@ ul li{
 }
 .carousel .thumbs-wrapper {
   margin: 20px 0px 20px 40px !important;
-  overflow: hidden;
+ /* overflow: hidden;*/
 }
 .carousel .thumbs li{
   display:block;
@@ -315,4 +316,48 @@ ul li{
   display: block;
     color: gray;
     font-size: 15px;
+}
+.productDetail .selection{
+  width: 60% !important;
+}
+.productDetail{
+padding-bottom: 50px;
+}
+.ui.card, .ui.cards>.card {
+  max-width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* width: 290px; */
+  margin: 10px !important;
+  min-height: 0;
+  background: #fff;
+  padding: 0;
+  border: none;
+  border-radius: .28571429rem;
+  box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+  transition: box-shadow .1s ease,transform .1s ease;
+  z-index: '';
+}
+html {
+  font-family: sans-serif;
+  scroll-behavior: auto;
+  overflow-y: scroll !important;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  overflow: auto;
+  overflow-x: auto !important;
+  overflow-y: auto;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
 }

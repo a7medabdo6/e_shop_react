@@ -18,50 +18,60 @@ import Privacy from "./components/Content/pages/Privacy";
 
 import { lazyload } from "react-lazyload";
 
+import i18n from "i18next";
+import { useTranslation, initReactI18next } from "react-i18next";
+import translationEN from "./locales/en/translationEN";
 lazyload({
   height: 200,
   once: true,
   offset: 100,
 });
-class App extends React.Component {
-  componentDidMount() {
-    console.log(document.documentElement.dir);
-  }
-  state = {
-    data: [],
-    token: "",
-    email: "",
-    pass: "",
-  };
-  componentWillMount = function () {
-    //  document.documentElement.dir = "rtl";
-  };
-  // <MainContent />   <Contact />
-  render() {
-    return (
-      <div className="App ">
-        <BrowserRouter>
-          <div style={{ boxShadow: "0 1px 2px 0 rgb(34 36 38 / 15%)" }}>
-            <Nav />
-          </div>
-          <div style={{ backgroundColor: "#f8f8f8" }}>
-            <div className="container2">
-              <Route path="/" exact component={MainContent} />
-              <Route path="/terms" exact component={Terms} />
-              <Route path="/policy" exact component={Policy} />
-              <Route path="/privacy" exact component={Privacy} />
-              <Route path="/shop/:handle" exact component={Shop} />
-              <Route path="/product-details" exact component={ProductDetail} />
-            </div>
-          </div>
 
-          <div>
-            <Footer />
+i18n
+  .use(initReactI18next) // passes i18n down to react-i18next
+  .init({
+    resources: {
+      en: {
+        translation: translationEN,
+      },
+    },
+    lng: "en",
+    fallbackLng: "en",
+
+    interpolation: {
+      escapeValue: false,
+    },
+  });
+
+const App = () => {
+  const { t } = useTranslation();
+
+  // <MainContent />   <Contact />
+
+  return (
+    <div className="App  ">
+      <BrowserRouter>
+        <div style={{ boxShadow: "0 1px 2px 0 rgb(34 36 38 / 15%)" }}>
+          <Nav />
+        </div>
+        <div>{t("email")}</div>
+        <div style={{ backgroundColor: "#f8f8f8" }}>
+          <div className="container2">
+            <Route path="/" exact component={MainContent} />
+            <Route path="/terms" exact component={Terms} />
+            <Route path="/policy" exact component={Policy} />
+            <Route path="/privacy" exact component={Privacy} />
+            <Route path="/shop/:handle" exact component={Shop} />
+            <Route path="/product-details" exact component={ProductDetail} />
           </div>
-        </BrowserRouter>
-      </div>
-    );
-  }
-}
+        </div>
+
+        <div>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </div>
+  );
+};
 
 export default App;

@@ -29,15 +29,160 @@ class mainHeader extends React.Component {
           <div className="col-xl-7 right col-10 col-lg-7 col-md-6">
             <div className="d-in-block pr-2 pl-2">
               <i class="fa fa-bars" aria-hidden="true"></i>
-              <Dropdown text="categories" className="link item d-in-block">
+              <Dropdown
+                text="categories"
+                pointing
+                className="link item d-in-block"
+              >
                 <Dropdown.Menu>
-                  <Dropdown.Item>Inbox</Dropdown.Item>
-                  <Dropdown.Item>Starred</Dropdown.Item>
-                  <Dropdown.Item>Sent Mail</Dropdown.Item>
-                  <Dropdown.Item>Drafts (143)</Dropdown.Item>
-                  <Dropdown.Divider />
-                  <Dropdown.Item>Spam (1009)</Dropdown.Item>
-                  <Dropdown.Item>Trash</Dropdown.Item>
+                  <Dropdown.Item>
+                    <Dropdown text="Clothing">
+                      <Dropdown.Menu>
+                        <Dropdown.Header>Mens</Dropdown.Header>
+                        <Dropdown text="t-shirts">
+                          <Dropdown.Menu>
+                            <Dropdown.Header>Mens</Dropdown.Header>
+                            <Dropdown.Item>Shirts</Dropdown.Item>
+                            <Dropdown.Item>Pants</Dropdown.Item>
+                            <Dropdown.Item>Jeans</Dropdown.Item>
+                            <Dropdown.Item>Shoes</Dropdown.Item>
+                            <Dropdown.Divider />
+                            <Dropdown.Header>Womens</Dropdown.Header>
+                            <Dropdown.Item>Dresses</Dropdown.Item>
+                            <Dropdown.Item>Shoes</Dropdown.Item>
+                            <Dropdown.Item>Bags</Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
+                        <Dropdown.Item>Pants</Dropdown.Item>
+                        <Dropdown.Item>Jeans</Dropdown.Item>
+                        <Dropdown.Item>Shoes</Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Header>Womens</Dropdown.Header>
+                        <Dropdown.Item>Dresses</Dropdown.Item>
+                        <Dropdown.Item>Shoes</Dropdown.Item>
+                        <Dropdown.Item>Bags</Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <Dropdown text="Clothing">
+                      <Dropdown.Menu>
+                        <Dropdown.Header>Mens</Dropdown.Header>
+                        <Dropdown text="t-shirts">
+                          <Dropdown.Menu>
+                            <Dropdown.Header>Mens</Dropdown.Header>
+                            <Dropdown.Item>Shirts</Dropdown.Item>
+                            <Dropdown.Item>Pants</Dropdown.Item>
+                            <Dropdown.Item>Jeans</Dropdown.Item>
+                            <Dropdown.Item>Shoes</Dropdown.Item>
+                            <Dropdown.Divider />
+                            <Dropdown.Header>Womens</Dropdown.Header>
+                            <Dropdown.Item>Dresses</Dropdown.Item>
+                            <Dropdown.Item>Shoes</Dropdown.Item>
+                            <Dropdown.Item>Bags</Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
+                        <Dropdown.Item>Pants</Dropdown.Item>
+                        <Dropdown.Item>Jeans</Dropdown.Item>
+                        <Dropdown.Item>Shoes</Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Header>Womens</Dropdown.Header>
+                        <Dropdown.Item>Dresses</Dropdown.Item>
+                        <Dropdown.Item>Shoes</Dropdown.Item>
+                        <Dropdown.Item>Bags</Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </Dropdown.Item>
+
+                  <Dropdown.Item>
+                    <Dropdown text="Clothing">
+                      <Dropdown.Menu>
+                        <Dropdown.Header>Mens</Dropdown.Header>
+                        <Dropdown text="t-shirts">
+                          <Dropdown.Menu>
+                            <Dropdown.Header>Mens</Dropdown.Header>
+                            <Dropdown.Item>Shirts</Dropdown.Item>
+                            <Dropdown.Item>Pants</Dropdown.Item>
+                            <Dropdown.Item>Jeans</Dropdown.Item>
+                            <Dropdown.Item>Shoes</Dropdown.Item>
+                            <Dropdown.Divider />
+                            <Dropdown.Header>Womens</Dropdown.Header>
+                            <Dropdown.Item>Dresses</Dropdown.Item>
+                            <Dropdown.Item>Shoes</Dropdown.Item>
+                            <Dropdown.Item>Bags</Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
+                        <Dropdown.Item>Pants</Dropdown.Item>
+                        <Dropdown.Item>Jeans</Dropdown.Item>
+                        <Dropdown.Item>Shoes</Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Header>Womens</Dropdown.Header>
+                        <Dropdown.Item>Dresses</Dropdown.Item>
+                        <Dropdown.Item>Shoes</Dropdown.Item>
+                        <Dropdown.Item>Bags</Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </Dropdown.Item>
+
+                  <Dropdown.Item>
+                    <Dropdown text="Clothing">
+                      <Dropdown.Menu>
+                        <Dropdown.Header>Mens</Dropdown.Header>
+                        <Dropdown text="t-shirts">
+                          <Dropdown.Menu>
+                            <Dropdown.Header>Mens</Dropdown.Header>
+                            <Dropdown.Item>Shirts</Dropdown.Item>
+                            <Dropdown.Item>Pants</Dropdown.Item>
+                            <Dropdown.Item>Jeans</Dropdown.Item>
+                            <Dropdown.Item>Shoes</Dropdown.Item>
+                            <Dropdown.Divider />
+                            <Dropdown.Header>Womens</Dropdown.Header>
+                            <Dropdown.Item>Dresses</Dropdown.Item>
+                            <Dropdown.Item>Shoes</Dropdown.Item>
+                            <Dropdown.Item>Bags</Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
+                        <Dropdown.Item>Pants</Dropdown.Item>
+                        <Dropdown.Item>Jeans</Dropdown.Item>
+                        <Dropdown.Item>Shoes</Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Header>Womens</Dropdown.Header>
+                        <Dropdown.Item>Dresses</Dropdown.Item>
+                        <Dropdown.Item>Shoes</Dropdown.Item>
+                        <Dropdown.Item>Bags</Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </Dropdown.Item>
+
+                  <Dropdown.Item>
+                    <Dropdown text="Clothing">
+                      <Dropdown.Menu>
+                        <Dropdown.Header>Mens</Dropdown.Header>
+                        <Dropdown text="t-shirts">
+                          <Dropdown.Menu>
+                            <Dropdown.Header>Mens</Dropdown.Header>
+                            <Dropdown.Item>Shirts</Dropdown.Item>
+                            <Dropdown.Item>Pants</Dropdown.Item>
+                            <Dropdown.Item>Jeans</Dropdown.Item>
+                            <Dropdown.Item>Shoes</Dropdown.Item>
+                            <Dropdown.Divider />
+                            <Dropdown.Header>Womens</Dropdown.Header>
+                            <Dropdown.Item>Dresses</Dropdown.Item>
+                            <Dropdown.Item>Shoes</Dropdown.Item>
+                            <Dropdown.Item>Bags</Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
+                        <Dropdown.Item>Pants</Dropdown.Item>
+                        <Dropdown.Item>Jeans</Dropdown.Item>
+                        <Dropdown.Item>Shoes</Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Header>Womens</Dropdown.Header>
+                        <Dropdown.Item>Dresses</Dropdown.Item>
+                        <Dropdown.Item>Shoes</Dropdown.Item>
+                        <Dropdown.Item>Bags</Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </div>

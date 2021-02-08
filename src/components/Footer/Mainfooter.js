@@ -1,13 +1,14 @@
 import React from "react";
-import { Row, Col } from "reactstrap";
+import { Row } from "reactstrap";
 import { Link } from "react-router-dom";
 
 function Mainfooter() {
+  // const { t, i18n } = useTranslation();
   return (
     <div className="mt-5 main-footer">
       <Row>
         <div className="col-lg-3 col-md-6 col-sm-6 d-none d-lg-block ">
-          <h5 className="title-footer pl-4">Popular Categories</h5>
+          <h5 className="title-footer pl-4">popular categories</h5>
           <div className="categories link pl-2">
             <h6>
               <Link to="/shop/jewelery" className="">
