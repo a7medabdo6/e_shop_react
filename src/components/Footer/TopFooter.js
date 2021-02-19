@@ -9,7 +9,7 @@ export default function TopFooter() {
         color: "#fff",
       }}
     >
-      <Row>
+      <Row className="text-center">
         <Col className="col-12 col-md-6 col-lg-3">
           <div style={{ paddingleft: "15px" }}>
             <h3>Do you need help ?</h3>

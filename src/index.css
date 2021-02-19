@@ -19,7 +19,7 @@ code {
 .container2{
   width: 90%;
   margin: auto;
-  overflow-y: auto;
+ /* overflow-y: auto;*/
 }
 .ui.menu{
   border: none !important;
@@ -322,6 +322,8 @@ ul li{
 }
 .productDetail{
 padding-bottom: 50px;
+background-color: white;
+margin-top: 20px;
 }
 .ui.card, .ui.cards>.card {
   max-width: 100%;
@@ -342,7 +344,7 @@ padding-bottom: 50px;
 html {
   font-family: sans-serif;
   scroll-behavior: auto;
-  overflow-y: scroll !important;
+  /*overflow-y: scroll !important;*/
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
@@ -353,11 +355,123 @@ body {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
-  overflow: auto;
-  overflow-x: auto !important;
+ /* overflow: auto;*/
+  /*overflow-x: auto !important;*/
   overflow-y: auto;
   line-height: 1.5;
   color: #212529;
   text-align: left;
   background-color: #fff;
+}
+.brand a img {
+  height: 70px;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+ .quality-product {
+  font-size: 14px;
+  font-weight: 700;
+  color: #73be22;
+  line-height: normal;
+}
+ .text-notice {
+  color: rgba(0,0,0,.54118);
+  font-size: 13px;
+  font-weight: 400;
+}
+.text-notice h2 {
+  font-size: 16px;
+  display: inline;
+  text-transform: capitalize;
+}
+ .text-notice a {
+  color: #5436a3;
+}
+.main>div{
+  margin: 10px 0px;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+}
+.productPrice .discountBadge {
+  background-color: rgba(207,20,43,.11);
+  text-align: center;
+  font-size: 11px;
+  color: #cf142b;
+  font-family: din-next-lt-w23-bold;
+  padding: 3px 8px;
+  direction: ltr;
+  float: right;
+  
+  margin-right: 25%;
+}
+.float-left{
+  float: left;
+}
+.ui.fluid.dropdown {
+  display: inline-block !important;
+  width: 100%;
+  float: right;
+  min-width: 0;
+}
+.padding-custom{
+  padding: 5.5rem 7rem!important;
+  background-color: white !important;
+}
+.margin-auto{
+  margin: auto !important;
+}
+.ui.card, .ui.cards>.margin-auto {
+ margin: auto !important;
+}
+.orders .step{
+  font-size: 12px !important;
+}
+.paymentMethods{
+  background-color: white;
+}
+.white{
+  background-color: #fff !important;
+}
+.right-float{
+  float: right;
+}
+.review{
+  display: inline-block;
+    float: right;
+}
+.data-rating{
+  display: inline-block !important;
+}
+.ui.progress .bar{
+  height: 100% !important
+}
+.ui.dimmer {
+  display: none;
+  position: absolute;
+  top: 0!important;
+  left: 0!important;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  padding: 1em;
+  background-color: rgba(0,0,0,.5);
+  opacity: 0;
+  line-height: 1;
+  animation-fill-mode: both;
+  animation-duration: .5s;
+  transition: background-color .5s linear;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  user-select: none;
+  will-change: opacity;
+  z-index: 1000;
 }

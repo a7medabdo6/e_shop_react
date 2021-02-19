@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col } from "reactstrap";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { Dropdown, Input, Checkbox } from "semantic-ui-react";
 
 import CardProduct from "../cardproduct";
@@ -38,17 +39,26 @@ export default class shop extends Component {
   };
 
   componentDidMount() {
+    console.log(this.props);
     const { handle } = this.props.match.params;
 
     axios
-      .get(`https://fakestoreapi.com/products/category/${handle}`)
+      .post(`https://niceone.alameeremlak.com/api/products-by-category`, {
+        headers: {
+          "Accept-Language": "ar",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+        id: handle,
+      })
       .then((res) => {
         const products = res.data;
         this.setState({ products });
+        console.log(this.state.products);
       });
   }
   handleClick = (e) => {
-    console.log(e.target.innerText);
+    // console.log(e.target.innerText);
   };
   render() {
     return (
@@ -159,7 +169,8 @@ export default class shop extends Component {
               <h3 style={{ display: "inline-block" }}>Care - 195 products</h3>
 
               <Dropdown
-                style={{ float: "right", width: "auto" }}
+                className="right-float"
+                style={{ width: "auto" }}
                 placeholder="Sort by"
                 fluid
                 onChange={this.handleClick}
@@ -170,12 +181,15 @@ export default class shop extends Component {
             <Row>
               {this.state.products.map((product) => {
                 return (
-                  <Col className="col-md-3">
-                    <CardProduct
-                      title={product.title}
-                      des={product.description}
-                      price={product.price}
-                    />
+                  <Col key={product.id} className="col-md-3">
+                    <Link to={"/shop/products/" + product.id}>
+                      <CardProduct
+                        image={product.main_image}
+                        title={product.title}
+                        des={product.description}
+                        price={product.packaging_price}
+                      />
+                    </Link>
                   </Col>
                 );
               })}

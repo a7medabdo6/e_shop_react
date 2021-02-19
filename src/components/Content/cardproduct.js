@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { Image, Button, Card } from "semantic-ui-react";
+import config from "../../config.json";
+
 export default class cardproduct extends Component {
   render() {
     return (
       <div>
         <Card>
           <Card.Content>
-            <Image src="https://react.semantic-ui.com/images/avatar/large/molly.png" />
+            <Image src={config.SERVER_URL + this.props.image} />
             <Card.Header className="productTit">{this.props.title}</Card.Header>
             <Card.Description className="productDes">
               {this.props.des} <strong>musicians</strong>

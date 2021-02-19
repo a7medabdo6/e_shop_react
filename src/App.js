@@ -15,12 +15,15 @@ import ProductDetail from "./components/Content/pages/productDetail";
 import Terms from "./components/Content/pages/Terms";
 import Policy from "./components/Content/pages/Policy";
 import Privacy from "./components/Content/pages/Privacy";
+import Address from "./components/Content/pages/checkout/address";
 
 import { lazyload } from "react-lazyload";
 
 import i18n from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
 import translationEN from "./locales/en/translationEN";
+import Profile from "./components/Content/pages/Profile";
+import payment from "./components/Content/pages/checkout/payment";
 lazyload({
   height: 200,
   once: true,
@@ -62,10 +65,13 @@ const App = () => {
             <Route path="/policy" exact component={Policy} />
             <Route path="/privacy" exact component={Privacy} />
             <Route path="/shop/:handle" exact component={Shop} />
-            <Route path="/product-details" exact component={ProductDetail} />
+            <Route path="/shop/products/:id" exact component={ProductDetail} />
+            <Route path="/checkout/address" exact component={Address} />
+
+            <Route path="/profile" exact component={Profile} />
+            <Route path="/checkout/payment" exact component={payment} />
           </div>
         </div>
-
         <div>
           <Footer />
         </div>

@@ -2,18 +2,25 @@ import React from "react";
 import { Dropdown, Menu, Form, Checkbox } from "semantic-ui-react";
 import CartList from "../Modals/CartList";
 import UserLogin from "../Modals/userLogin";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { connect } from "react-redux";
+import { selectLang } from "../../actions";
 
 class mainHeader extends React.Component {
   state = {
     value: "en",
+    categories: [],
+    lang: "ar",
   };
   handleChange = (e, { value }) => {
-    this.setState({ value });
-    if (this.state.value == "en") {
+    this.props.selectLang(value);
+    //this.setState({ value });
+    if (this.props.selectedLang == "en") {
       document.documentElement.dir = "rtl";
       document.getElementById("root").classList.add("rtl");
       import("../../Lang/rtl.css");
-    } else if (this.state.value == "ar") {
+    } else if (this.props.selectedLang == "ar") {
       document.documentElement.dir = "ltr";
       document.getElementById("root").classList.remove("rtl");
 
@@ -21,8 +28,26 @@ class mainHeader extends React.Component {
       import("../../Lang/ltr.css");
     }
   };
+  componentDidMount() {
+    axios
+      .get(`https://niceone.alameeremlak.com/api/categories-all`, {
+        headers: {
+          "Accept-Language": this.props.selectedLang,
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
+      .then((res) => {
+        const categories = res.data;
+        // const CAT = CATObject["All Categories"];
+        this.setState({ categories });
+        console.log(categories);
+      });
+  }
 
   render() {
+    // console.log(this.state.categories);
+    console.log(this.props.langs);
     return (
       <>
         <Menu className="row">
@@ -35,154 +60,41 @@ class mainHeader extends React.Component {
                 className="link item d-in-block"
               >
                 <Dropdown.Menu>
-                  <Dropdown.Item>
-                    <Dropdown text="Clothing">
-                      <Dropdown.Menu>
-                        <Dropdown.Header>Mens</Dropdown.Header>
-                        <Dropdown text="t-shirts">
+                  {this.state.categories.map((cat) => {
+                    // console.log(typeof cat.sub_categories);
+                    return (
+                      <Dropdown.Item key={cat.id} style={{ width: "200px" }}>
+                        <Dropdown className="w-100" text={cat.name}>
                           <Dropdown.Menu>
-                            <Dropdown.Header>Mens</Dropdown.Header>
-                            <Dropdown.Item>Shirts</Dropdown.Item>
-                            <Dropdown.Item>Pants</Dropdown.Item>
-                            <Dropdown.Item>Jeans</Dropdown.Item>
-                            <Dropdown.Item>Shoes</Dropdown.Item>
-                            <Dropdown.Divider />
-                            <Dropdown.Header>Womens</Dropdown.Header>
-                            <Dropdown.Item>Dresses</Dropdown.Item>
-                            <Dropdown.Item>Shoes</Dropdown.Item>
-                            <Dropdown.Item>Bags</Dropdown.Item>
+                            {cat.sub_categories.map((sub) => {
+                              console.log(sub.name);
+                              /* var name = sub.map((item) => {
+                                return item.locale === this.state.lang
+                                  ? item.name
+                                  : null;
+                              });
+                              var filtered = name.filter(function (el) {
+                                return el != null;
+                              });
+                              var filteredToString = filtered.toString();
+                              */
+                              /* var name =
+                                sub.translations[0].local === "ar"  //  
+                                  ? sub.translations[0].name
+                                  : sub.translations[1].name;
+                            */
+                              // console.log(filteredToString, " this i a name");
+                              return (
+                                <Dropdown.Item key={sub.id}>
+                                  <Link to={`/shop/${sub.id}`}>{sub.name}</Link>
+                                </Dropdown.Item>
+                              );
+                            })}
                           </Dropdown.Menu>
                         </Dropdown>
-                        <Dropdown.Item>Pants</Dropdown.Item>
-                        <Dropdown.Item>Jeans</Dropdown.Item>
-                        <Dropdown.Item>Shoes</Dropdown.Item>
-                        <Dropdown.Divider />
-                        <Dropdown.Header>Womens</Dropdown.Header>
-                        <Dropdown.Item>Dresses</Dropdown.Item>
-                        <Dropdown.Item>Shoes</Dropdown.Item>
-                        <Dropdown.Item>Bags</Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <Dropdown text="Clothing">
-                      <Dropdown.Menu>
-                        <Dropdown.Header>Mens</Dropdown.Header>
-                        <Dropdown text="t-shirts">
-                          <Dropdown.Menu>
-                            <Dropdown.Header>Mens</Dropdown.Header>
-                            <Dropdown.Item>Shirts</Dropdown.Item>
-                            <Dropdown.Item>Pants</Dropdown.Item>
-                            <Dropdown.Item>Jeans</Dropdown.Item>
-                            <Dropdown.Item>Shoes</Dropdown.Item>
-                            <Dropdown.Divider />
-                            <Dropdown.Header>Womens</Dropdown.Header>
-                            <Dropdown.Item>Dresses</Dropdown.Item>
-                            <Dropdown.Item>Shoes</Dropdown.Item>
-                            <Dropdown.Item>Bags</Dropdown.Item>
-                          </Dropdown.Menu>
-                        </Dropdown>
-                        <Dropdown.Item>Pants</Dropdown.Item>
-                        <Dropdown.Item>Jeans</Dropdown.Item>
-                        <Dropdown.Item>Shoes</Dropdown.Item>
-                        <Dropdown.Divider />
-                        <Dropdown.Header>Womens</Dropdown.Header>
-                        <Dropdown.Item>Dresses</Dropdown.Item>
-                        <Dropdown.Item>Shoes</Dropdown.Item>
-                        <Dropdown.Item>Bags</Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </Dropdown.Item>
-
-                  <Dropdown.Item>
-                    <Dropdown text="Clothing">
-                      <Dropdown.Menu>
-                        <Dropdown.Header>Mens</Dropdown.Header>
-                        <Dropdown text="t-shirts">
-                          <Dropdown.Menu>
-                            <Dropdown.Header>Mens</Dropdown.Header>
-                            <Dropdown.Item>Shirts</Dropdown.Item>
-                            <Dropdown.Item>Pants</Dropdown.Item>
-                            <Dropdown.Item>Jeans</Dropdown.Item>
-                            <Dropdown.Item>Shoes</Dropdown.Item>
-                            <Dropdown.Divider />
-                            <Dropdown.Header>Womens</Dropdown.Header>
-                            <Dropdown.Item>Dresses</Dropdown.Item>
-                            <Dropdown.Item>Shoes</Dropdown.Item>
-                            <Dropdown.Item>Bags</Dropdown.Item>
-                          </Dropdown.Menu>
-                        </Dropdown>
-                        <Dropdown.Item>Pants</Dropdown.Item>
-                        <Dropdown.Item>Jeans</Dropdown.Item>
-                        <Dropdown.Item>Shoes</Dropdown.Item>
-                        <Dropdown.Divider />
-                        <Dropdown.Header>Womens</Dropdown.Header>
-                        <Dropdown.Item>Dresses</Dropdown.Item>
-                        <Dropdown.Item>Shoes</Dropdown.Item>
-                        <Dropdown.Item>Bags</Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </Dropdown.Item>
-
-                  <Dropdown.Item>
-                    <Dropdown text="Clothing">
-                      <Dropdown.Menu>
-                        <Dropdown.Header>Mens</Dropdown.Header>
-                        <Dropdown text="t-shirts">
-                          <Dropdown.Menu>
-                            <Dropdown.Header>Mens</Dropdown.Header>
-                            <Dropdown.Item>Shirts</Dropdown.Item>
-                            <Dropdown.Item>Pants</Dropdown.Item>
-                            <Dropdown.Item>Jeans</Dropdown.Item>
-                            <Dropdown.Item>Shoes</Dropdown.Item>
-                            <Dropdown.Divider />
-                            <Dropdown.Header>Womens</Dropdown.Header>
-                            <Dropdown.Item>Dresses</Dropdown.Item>
-                            <Dropdown.Item>Shoes</Dropdown.Item>
-                            <Dropdown.Item>Bags</Dropdown.Item>
-                          </Dropdown.Menu>
-                        </Dropdown>
-                        <Dropdown.Item>Pants</Dropdown.Item>
-                        <Dropdown.Item>Jeans</Dropdown.Item>
-                        <Dropdown.Item>Shoes</Dropdown.Item>
-                        <Dropdown.Divider />
-                        <Dropdown.Header>Womens</Dropdown.Header>
-                        <Dropdown.Item>Dresses</Dropdown.Item>
-                        <Dropdown.Item>Shoes</Dropdown.Item>
-                        <Dropdown.Item>Bags</Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </Dropdown.Item>
-
-                  <Dropdown.Item>
-                    <Dropdown text="Clothing">
-                      <Dropdown.Menu>
-                        <Dropdown.Header>Mens</Dropdown.Header>
-                        <Dropdown text="t-shirts">
-                          <Dropdown.Menu>
-                            <Dropdown.Header>Mens</Dropdown.Header>
-                            <Dropdown.Item>Shirts</Dropdown.Item>
-                            <Dropdown.Item>Pants</Dropdown.Item>
-                            <Dropdown.Item>Jeans</Dropdown.Item>
-                            <Dropdown.Item>Shoes</Dropdown.Item>
-                            <Dropdown.Divider />
-                            <Dropdown.Header>Womens</Dropdown.Header>
-                            <Dropdown.Item>Dresses</Dropdown.Item>
-                            <Dropdown.Item>Shoes</Dropdown.Item>
-                            <Dropdown.Item>Bags</Dropdown.Item>
-                          </Dropdown.Menu>
-                        </Dropdown>
-                        <Dropdown.Item>Pants</Dropdown.Item>
-                        <Dropdown.Item>Jeans</Dropdown.Item>
-                        <Dropdown.Item>Shoes</Dropdown.Item>
-                        <Dropdown.Divider />
-                        <Dropdown.Header>Womens</Dropdown.Header>
-                        <Dropdown.Item>Dresses</Dropdown.Item>
-                        <Dropdown.Item>Shoes</Dropdown.Item>
-                        <Dropdown.Item>Bags</Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </Dropdown.Item>
+                      </Dropdown.Item>
+                    );
+                  })}
                 </Dropdown.Menu>
               </Dropdown>
             </div>
@@ -200,26 +112,20 @@ class mainHeader extends React.Component {
                 <Dropdown.Menu>
                   <Dropdown.Item>
                     <Form>
-                      <Form.Field>
-                        <Checkbox
-                          radio
-                          label="English"
-                          name="checkboxRadioGroup"
-                          value="en"
-                          checked={this.state.value === "en"}
-                          onChange={this.handleChange}
-                        />
-                      </Form.Field>
-                      <Form.Field>
-                        <Checkbox
-                          radio
-                          label="Arabic"
-                          name="checkboxRadioGroup"
-                          value="ar"
-                          checked={this.state.value === "ar"}
-                          onChange={this.handleChange}
-                        />
-                      </Form.Field>
+                      {this.props.langs.map((lang) => {
+                        return (
+                          <Form.Field>
+                            <Checkbox
+                              radio
+                              label={lang.name}
+                              name="checkboxRadioGroup"
+                              value={lang.value}
+                              checked={this.props.selectedLang === lang.value}
+                              onChange={this.handleChange}
+                            />
+                          </Form.Field>
+                        );
+                      })}
                     </Form>
                   </Dropdown.Item>
                 </Dropdown.Menu>
@@ -304,4 +210,12 @@ class mainHeader extends React.Component {
   }
 }
 
-export default mainHeader;
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    langs: state.Langs,
+    selectedLang: state.selectedLang,
+  };
+};
+
+export default connect(mapStateToProps, { selectLang })(mainHeader);

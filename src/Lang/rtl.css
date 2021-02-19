@@ -1,3 +1,128 @@
+.rtl{
+    text-align: right !important;
+}
 .rtl .right{
     text-align: right;
+}
+.rtl .carousel.carousel-slider {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    float: right;
+}
+.rtl .carousel:nth-child(2) {
+    width: 20% !important;
+    display: inline-block;
+    position: absolute !important;
+    top: 0px;
+    margin-left: 8%;
+    right: 75%;
+}
+.rtl .right-rtl{
+float: right;
+}
+.rtl .left-ltr{
+    float: left !important;
+}
+.rtl .text-right-custom{
+    text-align: right;
+}
+.rtl .productPrice .discountBadge {
+    background-color: rgba(207,20,43,.11);
+    text-align: center;
+    font-size: 11px;
+    color: #cf142b;
+    font-family: din-next-lt-w23-bold;
+    padding: 3px 8px;
+    direction: ltr;
+    float: left;
+    margin-left: 25%;
+}
+.rtl .ui.card>.content, .rtl.ui.cards>.card>.content {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid rgba(34,36,38,.1);
+    background: 0 0;
+    margin: 0;
+    text-align: right !important;
+    padding: 1em 1em;
+    box-shadow: none;
+    font-size: 1em;
+    border-radius: 0;
+}
+.rtl .float-right{
+    float: left !important;
+}
+.rtl .ui.steps .step>.icon {
+    line-height: 1;
+    font-size: 2.5em;
+    margin: 0  0 0 1rem;
+}
+.rtl .ui.labeled.input:not([class*="corner labeled"]) .label:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-radius: 0px 5px 5px 0px !important;
+}
+.rtl .ui.labeled.input:not([class*="corner labeled"]) .label:first-child+input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left-color: 1px solid rgba(34,36,38,.15) !important;
+}
+.rtl .ui.ordered.steps .step:before {
+    display: block;
+    position: static;
+    text-align: center;
+    content: counters(ordered, ".");
+    align-self: middle;
+    margin-left: 1rem;
+    font-size: 2.5em;
+    counter-increment: ordered;
+    font-family: inherit;
+    font-weight: 700;
+}
+.rtl .ui.checkbox .box:after, .ui.checkbox label:after {
+    position: absolute;
+    font-size: 14px;
+    top: 0;
+    left: 95%;
+    width: 17px;
+    height: 17px;
+    text-align: center;
+    opacity: 0;
+    color: rgba(0,0,0,.87);
+    transition: border .1s ease,opacity .1s ease,transform .1s ease,box-shadow .1s ease;
+}
+.rtl.ui.checkbox .box:before, .ui.checkbox label:before {
+    position: absolute;
+    top: 0;
+    left: 95%;
+    width: 17px;
+    height: 17px;
+    content: '';
+    background: #fff;
+    border-radius: .21428571rem;
+    transition: border .1s ease,opacity .1s ease,transform .1s ease,box-shadow .1s ease;
+    border: 1px solid #d4d4d5;
+}
+.rtl .ui.checkbox input[type=checkbox], .ui.checkbox input[type=radio] {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 95%;
+    opacity: 0!important;
+    outline: 0;
+    z-index: 3;
+    width: 17px;
+    height: 17px;
+}
+.rtl .ui.checkbox .box, .ui.checkbox label {
+    cursor: auto;
+    position: relative;
+    display: block;
+    padding-right: 1.85714em;
+    outline: 0;
+    font-size: 1em;
+}
+.rtl .right-float{
+    float: left !important;
 }

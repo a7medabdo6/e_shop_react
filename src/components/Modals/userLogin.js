@@ -7,6 +7,8 @@ import {
   Modal,
   Dropdown,
 } from "semantic-ui-react";
+import RigestirUser from "./rigesterUser";
+import { Link } from "react-router-dom";
 
 function UserLogin() {
   const [open, setOpen] = React.useState(false);
@@ -19,10 +21,10 @@ function UserLogin() {
       trigger={
         <Dropdown.Item>
           <div>
-            <a className="loginlink">Login</a>
+            <Link className="loginlink">Login</Link>
           </div>
           <div>
-            <a className="registerlink">Don't Have Account ? Register</a>
+            <Link className="registerlink">Don't Have Account ? Register</Link>
           </div>
         </Dropdown.Item>
       }
@@ -46,16 +48,12 @@ function UserLogin() {
         </div>
         <div className="mt-5 posAb">
           <div className="my-3">
-            <h6>
-              <a href="#" className="d-flex align-items-center text-dark">
-                <i className="fa mx-3 fa-user"></i> <span>Register</span>
-              </a>
-            </h6>
+            <RigestirUser onClick={() => setOpen(false)} />
             <h6 className="my-3">
-              <a href="#" className="d-flex align-items-center text-dark">
+              <Link href="#" className="d-flex align-items-center text-dark">
                 <i className="fa mx-3 fa-mobile"></i>
                 <span>Login With Email</span>
-              </a>
+              </Link>
             </h6>
           </div>
           <div className="mt-5">
