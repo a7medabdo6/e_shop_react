@@ -1,4 +1,4 @@
-![homepage](eshop.jpg)
+![homepage](/eshopp.jpg)
 
 # Getting Started with Create React App
 
